@@ -80,6 +80,7 @@
     }
   ],
   "devDependencies": {
+    "@storybook/react": "^5.2.6",
     "@types/cheerio": "^0.22.10",
     "@types/enzyme": "^3.1.15",
     "@types/history": "^4.7.2",
