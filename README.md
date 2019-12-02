@@ -1,6 +1,8 @@
-# storybook_guilde_react
+# Initiation à Storybook
 
-🚧 A project that does something.
+Ce repo contient la base de départ pour l'initiation à Storybook ainsi que les solutions des différentes étapes sur la branche solution.
+
+Le lien du trello : https://trello.com/b/SadDUlzV/formation-storybook
 
 ## Getting started
 
@@ -14,19 +16,4 @@
 
 ## Team
 
-> 🚧 Update me!
-
-Project director:
-  - **P D** (pd@theodo.co.uk)
-
-Developers (see [contributors](../../graphs/contributors)):
-  - **Dev 1** (dev@theodo.co.uk)
-  - **Dev 2** (dev@theodo.co.uk)
-  - **Dev 3** (dev@theodo.co.uk)
-
-Scrum Master:
-  - **S M** (sm@theodo.co.uk)
-
-Product Owner:
-  - **P O** (po@client.com)
-
+- **Léo Anesi** (leoa@theodo.fr)
