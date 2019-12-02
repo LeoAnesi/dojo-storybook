@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Form } from 'formik';
 import {
   borderRadius,
   colorUsage,
@@ -8,24 +9,25 @@ import {
   getSpacing,
   lineHeight,
 } from 'stylesheet';
+import Button from 'components/Button';
 
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: ${getSpacing(10)};
+  font-family: ${fontFamily.main};
 `;
 HomeContainer.displayName = 'HomeContainer';
 
 export const Logo = styled.img`
-  width: ${getSpacing(32)};
+  height: ${getSpacing(25)};
   margin-bottom: ${getSpacing(4)};
 `;
 Logo.displayName = 'Logo';
 
 export const Title = styled.h1`
   font-weight: ${fontWeight.bold};
-  font-family: ${fontFamily.main};
   font-size: ${fontSize.large};
   line-height: ${lineHeight.medium};
   margin-bottom: ${getSpacing(12)};
@@ -45,6 +47,7 @@ HowTo.displayName = 'HowTo';
 export const DescriptionList = styled.ul`
   list-style: disc;
   margin-left: ${getSpacing(4)};
+  margin-bottom: ${getSpacing(12)};
 `;
 DescriptionList.displayName = 'DescriptionList';
 
@@ -58,9 +61,14 @@ export const DescriptionLine = styled.li`
 `;
 DescriptionLine.displayName = 'DescriptionLine';
 
-export const Code = styled.code`
-  color: ${colorUsage.codeColor};
-  font-family: ${fontFamily.code};
-  padding: ${getSpacing(1)};
+export const InputsForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 340px;
 `;
-Code.displayName = 'Code';
+
+export const LoginButton = styled(Button)`
+  align-self: center;
+  margin-top: ${getSpacing(8)};
+`;

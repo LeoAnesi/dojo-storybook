@@ -1,38 +1,63 @@
 import * as React from 'react';
+import { Field, withFormik } from 'formik';
 import {
   HomeContainer,
   Logo,
   Title,
   HowTo,
-  Code,
   DescriptionLine,
   DescriptionList,
+  InputsForm,
+  LoginButton
 } from './Home.style';
-import logo from 'assets/forge_logo.png';
+import InputRow from 'components/InputRow';
+import logo from 'assets/storybook-logo.svg';
 
 const Home: React.FunctionComponent = () => (
   <HomeContainer>
     <Logo alt="forgelogo" src={logo} />
-    <Title>Welcome to Forge, you’ve just launched your project</Title>
+    <Title>Bienvenue à cette introduction à StoryBook</Title>
     <HowTo>
+      Aujourd'hui nous allons :
       <DescriptionList>
         <DescriptionLine>
-          To create a page or a component, run <Code>yarn generate</Code>.
+          Installer Storybook sur ce projet
         </DescriptionLine>
         <DescriptionLine>
-          The style is centralized in the <Code>src/stylesheet.ts</Code>. From there, you can manage
-          colors, font properties, spacing unit...
+          Créer des stories de base sur les composants plus bas
         </DescriptionLine>
         <DescriptionLine>
-          Redesign the <Code>src/components/AppCrashFallback</Code> that will display when there is
-          a javascript error.
-        </DescriptionLine>
-        <DescriptionLine>
-          Read more about the tools and built-in features in the <Code>README.md</Code>.
+          Ajouter des plugins à Storybook pour en faire encore plus
         </DescriptionLine>
       </DescriptionList>
+      <InputsForm>
+        <Field
+          type="text"
+          name="Error field"
+          label="Error field"
+          component={InputRow}
+          error="That's an awfull error"
+        />
+        <Field
+          type="password"
+          name="Normal field"
+          label="Normal field"
+          placeholder="Hey there I'm a placeholder"
+          component={InputRow}
+        />
+        <LoginButton>
+          Button
+        </LoginButton>
+        <LoginButton disabled>
+          Disabled button
+        </LoginButton>
+      </InputsForm>
     </HowTo>
   </HomeContainer>
 );
 
-export default Home;
+export default withFormik({
+  mapPropsToValues: () => ({}),
+  validate: () => { },
+  handleSubmit: () => { },
+})(Home);

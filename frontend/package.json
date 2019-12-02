@@ -37,7 +37,8 @@
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,ts,tsx}' --fix",
     "lint-style": "stylelint 'src/**/*.style.{ts,tsx}' 'src/**/style.{ts,tsx}'",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "storybook": "start-storybook"
   },
   "browserslist": [
     ">0.2%",

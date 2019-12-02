@@ -1,22 +1,14 @@
 import React from 'react';
 
-import { ConnectedRouter } from 'connected-react-router';
+import { Router } from 'react-router-dom';
 import { History } from 'history';
-import { Provider } from 'react-redux';
 import { Route } from 'react-router';
-import { Store } from 'redux';
-import { Persistor } from 'redux-persist';
-import { PersistGate } from 'redux-persist/integration/react';
 
-import AppCrashFallback from './components/AppCrashFallback';
-import ErrorBoundary from './components/ErrorBoundary';
 import Root from './components/Root';
 import Routes, { PATHS } from './routes';
 
 interface Props {
   history: History;
-  persistor: Persistor;
-  store: Store;
 }
 
 const RootComponentWithRoutes: React.FunctionComponent = () => (
@@ -25,16 +17,10 @@ const RootComponentWithRoutes: React.FunctionComponent = () => (
   </Root>
 );
 
-const App: React.FunctionComponent<Props> = ({ history, persistor, store }) => (
-  <ErrorBoundary FallbackComponent={AppCrashFallback}>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <ConnectedRouter history={history}>
-          <Route path={PATHS.HOME} component={RootComponentWithRoutes} />
-        </ConnectedRouter>
-      </PersistGate>
-    </Provider>
-  </ErrorBoundary>
+const App: React.FunctionComponent<Props> = ({ history }) => (
+  <Router history={history}>
+    <Route path={PATHS.HOME} component={RootComponentWithRoutes} />
+  </Router>
 );
 
 export default App;
